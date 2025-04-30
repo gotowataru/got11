@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3Dキャラクター操作</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+
+        /* --- ▼ UI要素全体のコンテナスタイル ▼ --- */
+        #ui-container {
+            position: absolute; /* 画面左上からの絶対位置指定 */
+            top: 10px;          /* 上から10px */
+            left: 10px;         /* 左から10px */
+            padding: 10px 15px; /* 内側の余白 */
+            background-color: rgba(0, 0, 0, 0.6); /* 少し透けた黒背景 */
+            color: white;       /* 文字色を白に */
+            font-family: sans-serif; /* フォント */
+            font-size: 14px;    /* 文字サイズ */
+            border-radius: 5px; /* 角を少し丸める */
+            z-index: 10;        /* 他の要素より手前に表示 */
+            line-height: 1.6;   /* 行間 */
+        }
+        /* --- ▲ UI要素全体のコンテナスタイル ▲ --- */
+
+        /* --- ▼ 各UI要素のスタイル調整 ▼ --- */
+        #controls-info {
+            white-space: pre-wrap; /* テキスト内の改行をそのまま表示 */
+            margin-bottom: 15px;   /* 操作説明の下に少し広めの余白 */
+        }
+        #score, #time {
+            margin-bottom: 5px;    /* スコアと時間の下に少し余白 */
+            font-size: 16px;       /* スコアと時間は少し大きく */
+            font-weight: bold;     /* 太字に */
+        }
+        #time:last-child { /* 最後の要素の下余白をなくす */
+             margin-bottom: 0;
+        }
+        /* --- ▲ 各UI要素のスタイル調整 ▲ --- */
+
+    </style>
+</head>
+<body>
+    <div id="ui-container">
+
+        <div id="controls-info">操作方法
+・移動: W A S D / ↑ ← ↓ →
+・ジャンプ: スペースキー
+・パンチ: Pキー
+・おどる: Oキー
+・カメラ回転: マウス左ドラッグ
+・カメラズーム: マウスホイール</div>
+
+        <div id="score">Score: 0</div>
+        <div id="time">Time: 0.00</div>
+        </div>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+            }
+        }
+    </script>
+    <script src="./libs/ammo.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
