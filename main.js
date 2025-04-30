@@ -732,8 +732,8 @@ class GameScene {
 
     // --- ▼ 破片を生成・飛び散らせるメソッド ▼ ---
     createFragments(cylinderMesh) {
-        const fragmentCount = 20; // 1つの円柱から生成する破片の数
-        const explosionForce = 5; // 破片が飛び散る力の強さ
+        const fragmentCount = 35; // 1つの円柱から生成する破片の数
+        const explosionForce = 8; // 破片が飛び散る力の強さ
         const fragmentLifetime = 1.5; // 破片が表示される時間
 
         const cylinderPos = cylinderMesh.position;
